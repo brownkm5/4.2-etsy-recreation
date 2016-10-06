@@ -1,7 +1,8 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+(function($){
+  $(function(){
 
-var _ = require('underscore');
-var $ = require('jquery');
-var Handlebars = require('handlebars');
 
 
 /*
@@ -24,12 +25,6 @@ var Handlebars = require('handlebars');
 
       fetchJSONP(url, logData);
 */
-
-
-var url = "https://api.etsy.com/v2/listings/active.js?api_key=cdwxq4soa7q4zuavbtynj8wx&keywords=cool+stickers&includes=Images,Shop";
-
-var items;
-
 function fetchJSONP(url, callback) {
     var callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
     var script = document.createElement('script');
@@ -44,21 +39,8 @@ function fetchJSONP(url, callback) {
     document.body.appendChild(script);
 }
 
-fetchJSONP(url,function(data) {
-  items = data.results;
-  console.log(items);
-  displayItems(items);
+
 });
+}(jQuery));
 
-
-function displayItems(itemList){
-
-  var source = $('#item-template').html();
-  var itemTemplate = Handlebars.compile(source);
-
-  _.each(itemList, function(item){
-    var $itemHtml = $(itemTemplate(item));
-
-    $('.products').append($itemHtml);
-    });
-}
+},{}]},{},[1]);

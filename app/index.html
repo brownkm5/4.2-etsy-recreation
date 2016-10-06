@@ -3,12 +3,138 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>4 2 etsy recreation</title>
+    <title>Etsy Recreation</title>
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
 
-    <h1></h1>
+    <div class="contain">
+
+
+      <div class="header row">
+
+        <div class="header-left col-sm-6 col-xs-6">
+          <img class="logo" src="../images/etsy-log.jpg" alt=""/>
+          <div class="wrapper">
+            <input type="text" name="name" id="text-box" class="text-box" value="Search For Items or Shops">
+            <button class="search-button btn btn-default" type="button" name="name">Search</button>
+          </div>
+        </div>
+
+        <div class="header-right col-sm-offset-2 col-sm-4 col-xs-4 col-xs-offset-2">
+        <span class="sell">Sell on Etsy</span>
+        <span class="register">Register</span>
+        <button type="button" class="sign-in btn btn-default">Sign In</button>
+        <span class="cart glyphicon glyphicon-shopping-cart">Cart</span>
+        </div>
+
+      </div>
+
+
+      <div class="lower-head col-sm-12 col-xs-12 row">
+
+        <span class="lower-head-item">Clothing &amp; Accesories</span>
+        <span class="lower-head-item">Jewelry</span>
+        <span class="lower-head-item">Craft Supplies &amp; Tools</span>
+        <span class="lower-head-item">Weddings</span>
+        <span class="lower-head-item">Entertainment</span>
+        <span class="lower-head-item">Home &amp; Living</span>
+        <span class="lower-head-item">Kids &amp; Baby</span>
+        <span class="lower-head-item">Vintage</span>
+
+      </div>
+
+
+      <div class="col-sm-2 col-xs-2 left-nav">
+
+        <span class="results">Show results for:</span>
+
+        <div class="nav-items">
+            <p class="categories">All categories</p>
+            <p>Craft Supplies &amp; Tools</p>
+            <p>Accessories</p>
+            <p>Home &amp; Living</p>
+            <p>Clothing</p>
+            <p>Jewelry</p>
+            <p>Toys &amp; Games</p>
+            <p>Art &amp; Collectibles</p>
+            <p>Bags &amp; Purses</p>
+            <p>Bath &amp; Beauty</p>
+            <p>Paper &amp; Party Supplies</p>
+            <p>Shoes</p>
+            <p>Pet Supplies</p>
+            <p>Books, Movies &amp; Music</p>
+            <p>Electronics &amp; Accessories</p>
+            <p>Weddings</p>
+
+        </div>
+
+        <span class="results">Refine your search</span>
+
+        <div class="refine-items">
+
+          <div class="refine">
+          <p class="categories">Shop location</p>
+          <input type="radio" name="chooseone" value="Anywhere"> <label class="bold" for="HTML">Anywhere</label><br>
+          <input type="radio" name="chooseone" value="United States"> <label class="not" for="HTML">United States</label><br>
+          <p>Choose a custom location</p>
+          </div>
+
+          <div class="refine-style">
+            <p class="categories">Item type</p>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="bold" for="HTML">All items</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Handmade</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Vintage</label><br>
+          </div>
+
+          <div class="refine-style">
+            <p class="categories">Price($)</p>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Any price</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Under $25</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">$25 to $50</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">$50 to $100</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Over $100</label><br>
+          </div>
+
+          <div class="refine-style">
+            <p class="categories">Filter by color</p>
+
+          </div>
+
+          <div class="refine-style">
+            <p class="categories">Ordering options</p>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Accepts Etsy gift cards</label><br>
+            <input type="radio" name="chooseone" value="Anywhere"> <label class="not" for="HTML">Customizable</label><br>
+          </div>
+
+          <div class="refine-style">
+            <p class="categories">Ship to</p>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">United States<span class="caret"></span></button>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="col-sm-10 col-xs-10 row item-container">
+        <ul class="row products">
+
+        </ul>
+      </div>
+
+    </div>
+
+    <script id="item-template" type="text/x-handlebars-template">
+       <li class="col-sm-3 col-xs-3 item">
+         <a href="{{url}}">
+         <img class='images' src="{{Images.0.url_170x135}}" alt"">
+         <button class="too-long"><p class="title">{{title}}</p><div class="shop">{{Shop.shop_name}}</div> <span class="price">${{price}}</span></button>
+         </a>
+       </li>
+   </script>
 
     <script src="js/bundle.js"></script>
   </body>
